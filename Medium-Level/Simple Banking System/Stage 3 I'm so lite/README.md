@@ -8,7 +8,7 @@ You can use the sqlite3 module to manage SQLite database from Python. You don't 
 
 To use the module, you must first create a Connection object that represents the database. Here the data will be stored in the example.s3db file:
 ```python
-import sqlite3s
+import sqlite3
 conn = sqlite3.connect('example.s3db')
 ```
 Once you have a Connection, you can create a Cursor object and call its execute() method to perform SQL queries:
