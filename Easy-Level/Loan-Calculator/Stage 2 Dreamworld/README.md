@@ -8,11 +8,11 @@ In this stage, we need to ask the user to input the loan principal amount. Then,
 
 Also, let’s assume we don't care about decimal places. If you get a floating-point expression as a result of the calculation, you’ll have to do additional actions. Take a look at Example 4 where you need to calculate the monthly payment. You know that the loan principal is 1000 and want to pay it back in 9 months. The real value of payment can be calculated as:
 
-![alt tag](https://imgur.com/52uXmJu)
+![alt tag](https://i.imgur.com/52uXmJu.png)
 
 Of course, you can’t pay that amount of money. You have to round up this value and make it 112. Remember that no payment can be more than the fixed monthly payment. If your monthly repayment amount is 111, that would make the last payment 112, which is not acceptable. If you make a monthly payment of 112, the last payment will be 104, which is fine. You can calculate the last payment as follows:
 
-![alt tag](https://imgur.com/MAhvS3L)
+![alt tag](https://imgur.com/MAhvS3L.png)
 
 In this stage, you need to count the number of months or the monthly payment. If the last payment differs from the rest, the program should display the monthly payment and the last payment.
 #  Objectives
