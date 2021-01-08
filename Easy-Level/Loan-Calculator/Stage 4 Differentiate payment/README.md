@@ -101,7 +101,7 @@ Now let’s calculate the payment for the first month:
 
 The second month (![alt](https://latex.codecogs.com/svg.latex?m%20=%202)):
 
-![alt](https://latex.codecogs.com/svg.latex?D_1%20=%20\dfrac{P}{n}%20+%20i%20*%20\left(P%20-%20\dfrac{%20P%20*%20(m-1)%20}{%20n%20}%20\right)=\dfrac{%201000000%20}{%2010%20}%20+%200.008333...%20*%20\left(%201000000%20-%20\dfrac{%201000000*(2-1)%20}{%2010%20}%20\right)%20=%20107500)
+![alt](https://latex.codecogs.com/svg.latex?D_2%20=%20\dfrac{P}{n}%20+%20i%20*%20\left(P%20-%20\dfrac{%20P%20*%20(m-1)%20}{%20n%20}%20\right)=\dfrac{%201000000%20}{%2010%20}%20+%200.008333...%20*%20\left(%201000000%20-%20\dfrac{%201000000*(2-1)%20}{%2010%20}%20\right)%20=%20107500)
 
 The third month (![alt](https://latex.codecogs.com/svg.latex?m%20=%203)):
 
