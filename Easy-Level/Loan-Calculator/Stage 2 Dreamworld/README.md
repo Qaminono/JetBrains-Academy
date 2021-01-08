@@ -12,7 +12,7 @@ payment=principalmonths=10009=111.11...payment = \dfrac{principal}{months}=\dfra
 
 Of course, you can’t pay that amount of money. You have to round up this value and make it 112. Remember that no payment can be more than the fixed monthly payment. If your monthly repayment amount is 111, that would make the last payment 112, which is not acceptable. If you make a monthly payment of 112, the last payment will be 104, which is fine. You can calculate the last payment as follows:
 
-![alt tag]("https://github.com/Qaminono/JetBrains-Academy/tree/main/Easy-Level/Loan-Calculator/Stage%202%20Dreamworld/formula2.png")
+![alt tag](https://github.com/Qaminono/JetBrains-Academy/tree/main/Easy-Level/Loan-Calculator/Stage%202%20Dreamworld/formula2.png)
 
 In this stage, you need to count the number of months or the monthly payment. If the last payment differs from the rest, the program should display the monthly payment and the last payment.
 #  Objectives
