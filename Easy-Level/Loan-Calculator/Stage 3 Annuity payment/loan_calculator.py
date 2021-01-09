@@ -13,8 +13,8 @@ def main():
         num_of_month = math.ceil(math.log(montly_payment / (montly_payment - i * loan_principal), 1 + i))
         in_years = num_of_month // 12
         in_month = num_of_month - in_years * 12
-        str_years = ("" if in_years == 0 else str(in_years) + " year") + "s" if in_years > 1 else ""
-        str_month = ("" if in_month == 0 else str(in_month) + " month") + "s" if in_month > 1 else ""
+        str_years = ("" if in_years == 0 else str(in_years) + " year") + ("s" if in_years > 1 else "")
+        str_month = ("" if in_month == 0 else str(in_month) + " month") + ("s" if in_month > 1 else "")
         if in_years and in_month:
             str_res = f"It will take {str_years} and {str_month} to repay this loan!"
         elif in_years:
