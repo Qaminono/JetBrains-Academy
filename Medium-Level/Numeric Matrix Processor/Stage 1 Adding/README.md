@@ -9,7 +9,7 @@ For two matrices to be added, they must have an equal number of rows and columns
 
 Here is a simple example with numbers:
 
-![alt](https://latex.codecogs.com/svg.latex?\begin{pmatrix}%202%20&%204%20&5%20&%206%20\\%206%20&%206%20&7%20&%208%20\\%205%20&%200%20&0%20&%201%20\\%208%20&%208%20&2%20&%209%20\\%20\end{pmatrix}%20+\begin{pmatrix}%207%20&%207%20&0%20&%201%20\\%209%20&%209%20&9%20&%202%20\\%205%20&%204%20&3%20&%2012%20\\%200%20&%206%20&5%20&%206%20\\%20\end{pmatrix}%20=%20\begin{pmatrix}%202+7%20&%204+7%20&5+0%20&%206+1%20\\%206+9%20&%206+9%20&7+9%20&%208+2%20\\%205+5%20&%200+4%20&0+3%20&%201+12%20\\%208+0%20&%208+6%20&2+5%20&%209+6%20\\%20\end{pmatrix})
+![alt](https://i.gyazo.com/969153e86193055bd37eda36b4a25aaf.png)
 #  Objectives
 
 In this stage, you should write a program that:
