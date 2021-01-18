@@ -1,4 +1,4 @@
-Description
+#  Description
 
 In this stage, you should write a program that calculates a determinant of a matrix. You can check out some [videos about linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) to understand the essence of the determinant and why it is important. To see how to calculate the determinant of any square matrix, watch a video about [minors and cofactors](https://www.youtube.com/watch?v=KMKd993vG9Q) and [computing the nxn determinant](https://www.youtube.com/watch?v=H9BWRYJNIv4). Also, here's [nice graphic explanation](https://www.mathsisfun.com/algebra/matrix-determinant.html) on minors and cofactors.
 
