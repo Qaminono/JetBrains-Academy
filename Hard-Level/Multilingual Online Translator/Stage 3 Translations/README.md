@@ -13,6 +13,7 @@ Use Python’s built-in text formatting to:
 The greater-than symbol followed by a space (> ) represents the user input. Note that it's not part of the input.
 
 Type "en" if you want to translate from French into English, or "fr" if you want to translate from English into French:
+
     > fr
     Type the word you want to translate:
     > hello
