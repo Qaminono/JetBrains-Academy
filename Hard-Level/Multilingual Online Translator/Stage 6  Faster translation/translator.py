@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import requests
+import sys
 
 
 from bs4 import BeautifulSoup
@@ -22,10 +23,16 @@ supporting_languages_tags = {"1": "rtl arabic",
 
 greeting = "Hello, you're welcome to the translator.\nTranslator supports:\n" \
            + "\n".join([key + '.' + value for key, value in supporting_languages.items()])
-print(greeting)
-from_language = input("Type the number of your language: ")
-to_language = input("Type the number of a language you want to translate to or '0' to translate to all languages:")
-word_to_translate = input("Type the word you want to translate: ")
+if sys.argv[1:4]:
+    from_language = {value.lower(): key for key, value in supporting_languages.items()}[sys.argv[1]]
+    to_language = "0" if sys.argv[2] == "all" else\
+        {value.lower(): key for key, value in supporting_languages.items()}[sys.argv[2]]
+    word_to_translate = sys.argv[3]
+else:
+    print(greeting)
+    from_language = input("Type the number of your language: ")
+    to_language = input("Type the number of a language you want to translate to or '0' to translate to all languages:")
+    word_to_translate = input("Type the word you want to translate: ")
 
 
 def to_file_and_terminal(func):
