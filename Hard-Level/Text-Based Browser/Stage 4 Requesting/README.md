@@ -1,50 +1,55 @@
-#  Description
+<h2 style="text-align: center;">Description</h2>
 
-Now we should bring our browser closer to resembling a real one by adding an address bar. In this stage, you need to leave your hard-coded variables behind and show your user some real pages. Make the browser request real input URLs and display the results.
+<p>Now we should bring our browser closer to resembling a real one by adding an address bar. In this stage, you need to leave your hard-coded variables behind and show your user some real pages. Make the browser request real input URLs and display the results. </p>
 
-You might find that you suddenly don't have permission to visit certain websites. That’s because of the user-agent, which is just a string that all browsers use to mark the request. Browsers have different user-agents, and since yours doesn’t have one, it may encounter problems. Frankly, browsers add a lot of additional information to the requests. All this info can be set using the request library. For this task, it's optional, but feel free to experiment.
-#  Objectives
+<p>You might find that you suddenly don't have permission to visit certain websites. That’s because of the user-agent, which is just a string that all browsers use to mark the request. Browsers have different user-agents, and since yours doesn’t have one, it may encounter problems. Frankly, browsers add a lot of additional information to the requests. All this info can be set using the request library. For this task, it's optional, but feel free to experiment.</p>
 
-Keep the functionality from the previous stages and follow the same guidelines for file names. You don't need to keep the predefined variables with the content of web pages. Instead, add new features to the browser:
+<h2 style="text-align: center;">Objectives</h2>
 
--    Your program should read the URL from the input as before, but now it should show the real web page.
--    Since the user can input the URL without https:// in the beginning, your browser should append this string if it is not there.
+<p>Keep the functionality from the previous stages and follow the same guidelines for file names. You don't need to keep the predefined variables with the content of web pages. Instead, add new features to the browser:</p>
 
-#  Example
+<ol>
+	<li>Your program should read the URL from the input as before, but now it should show the real web page.</li>
+	<li>Since the user can input the URL without <code class="language-python">https://</code> in the beginning, your browser should append this string if it is not there.</li>
+</ol>
 
-The greater-than symbol followed by a space (> ) represents the user input. Note that it's not part of the input.
+<h2 style="text-align: center;">Example</h2>
 
-    > python browser.py dir-for-files
-    > docs.python.org
-    
-    <!DOCTYPE html>
-    
-    <html xmlns="http://www.w3.org/1999/xhtml">
-      <head>
-        <meta charset="utf-8" /><title>3.7.4 Documentation</title>
-        <link rel="stylesheet" href="_static/pydoctheme.css" type="text/css" />
-        <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-        <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-        <script type="text/javascript" src="_static/sidebar.js"></script>
-    
-        <link rel="search" type="application/opensearchdescription+xml"
-              title="Search within Python 3.7.4 documentation"
-              href="_static/opensearch.xml"/>
-        <link rel="author" title="About these documents" href="about.html" />
-        <link rel="index" title="Index" href="genindex.html" />
-        <link rel="search" title="Search" href="search.html" />
-        <link rel="copyright" title="Copyright" href="copyright.html" />
-        <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-        <link rel="canonical" href="https://docs.python.org/3/index.html" />
-    
-        <script type="text/javascript" src="_static/copybutton.js"></script>
-        <script type="text/javascript" src="_static/switchers.js"></script>
-    
-       …  (More than 200 such terrifying strings)
-    > exit
+<p>The greater-than symbol followed by a space (<code class="language-python">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+
+<pre><code class="language-python">&gt; python browser.py dir-for-files
+&gt; docs.python.org
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;&lt;title&gt;3.7.4 Documentation&lt;/title&gt;
+    &lt;link rel="stylesheet" target="_blank" href="_static/pydoctheme.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" target="_blank" href="_static/pygments.css" type="text/css" /&gt;
+
+    &lt;script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="_static/jquery.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="_static/underscore.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="_static/doctools.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="_static/language_data.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" src="_static/sidebar.js"&gt;&lt;/script&gt;
+
+    &lt;link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.7.4 documentation"
+          target="_blank" href="_static/opensearch.xml"/&gt;
+    &lt;link rel="author" title="About these documents" target="_blank" href="about.html" /&gt;
+    &lt;link rel="index" title="Index" target="_blank" href="genindex.html" /&gt;
+    &lt;link rel="search" title="Search" target="_blank" href="search.html" /&gt;
+    &lt;link rel="copyright" title="Copyright" target="_blank" href="copyright.html" /&gt;
+    &lt;link rel="shortcut icon" type="image/png" target="_blank" href="_static/py.png" /&gt;
+    &lt;link rel="canonical" target="_blank" href="https://docs.python.org/3/index.html" /&gt;
+
+    &lt;script type="text/javascript" src="_static/copybutton.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="_static/switchers.js"&gt;&lt;/script&gt;
+
+   …  (More than 200 such terrifying strings)
+&gt; exit
+
+</code></pre>

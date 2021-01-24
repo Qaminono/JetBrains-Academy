@@ -1,55 +1,58 @@
 <h2 style="text-align: center;">Description</h2>
 
-<p>Now we should bring our browser closer to resembling a real one by adding an address bar. In this stage, you need to leave your hard-coded variables behind and show your user some real pages. Make the browser request real input URLs and display the results. </p>
+<p>Now it is important for us to present the resulting "text" in a form that is convenient for the user.</p>
 
-<p>You might find that you suddenly don't have permission to visit certain websites. That’s because of the user-agent, which is just a string that all browsers use to mark the request. Browsers have different user-agents, and since yours doesn’t have one, it may encounter problems. Frankly, browsers add a lot of additional information to the requests. All this info can be set using the request library. For this task, it's optional, but feel free to experiment.</p>
+<p>If you’re not familiar with HTML, here's a short explanation. When working on the previous task, you probably noticed a lot of <code class="java">&lt;div&gt;</code>, <code class="java">&lt;script&gt;</code>, or <code class="java">&lt;p&gt;</code> “words” on the displayed web page. These are called <strong>tags</strong>. Browsers need tags to know how exactly to show the page. For example, the website could include headers that look different from the rest of the text. Also, it could have links that are highlighted in blue, and the cursor could look like a pointing finger when it hovers over the link. Tags are used to help the browser identify where the links are, where an image should be, and so on.</p>
+
+<p>Tags are necessary for the browser but aren’t useful for users. Most tags are paired. For example: <code class="java">&lt;p&gt;Some text&lt;/p&gt;</code>, where <code class="java">&lt;p&gt;</code> is an opening tag and <code class="java">&lt;/p&gt;</code> is a closing tag. Your browser should only display “<code class="java">Some text</code>”, without <code class="java">&lt;p&gt;</code> and <code class="java">&lt;/p&gt;</code>.</p>
+
+<p>Each tag has its own purpose: <code class="java">&lt;p&gt;</code> for text, <code class="java">&lt;h1&gt; &lt;h2&gt; … &lt;h6&gt;</code> for headers, <code class="java">&lt;a&gt;</code> for links, <code class="java">&lt;ul&gt; &lt;ol&gt; &lt;li&gt;</code> for lists.</p>
+
+<p>Also, in this stage, try to make your program be able to handle incorrect URLs: for example, if an address without a dot and a top-level domain following it (for example, <span style="color: #000000;"><span style="background-color: #f3f4f6; font-size: 14.4px;">google</span></span> and not <code class="java">google.com</code>) is entered, your program should output a line <code class="java">Incorrect URL</code>. Note that if you pass an incorrect URL to the method get(), it'll throw an exception called <code class="java">requests.exceptions.ConnectionError</code>.</p>
 
 <h2 style="text-align: center;">Objectives</h2>
 
-<p>Keep the functionality from the previous stages and follow the same guidelines for file names. You don't need to keep the predefined variables with the content of web pages. Instead, add new features to the browser:</p>
+<p>In this stage, you need to extract and output the content between these tags. No more <code class="java">&lt;div&gt;</code>, <code class="java">&lt;script&gt;</code>, <code class="java">&lt;p&gt;</code> and so on, just text! Your browser should display only the content of a limited list of tags (<code class="java">&lt;p&gt;</code>, headers, <code class="java">&lt;a&gt;</code> and <code class="java">&lt;ul&gt;</code>, <code class="java">&lt;ol&gt;</code>, <code class="java">&lt;li&gt;</code>) without showing the tags themselves.</p>
 
-<ol>
-	<li>Your program should read the URL from the input as before, but now it should show the real web page.</li>
-	<li>Since the user can input the URL without <code class="language-python">https://</code> in the beginning, your browser should append this string if it is not there.</li>
-</ol>
+<p>Use the library <code class="java">beautifulsoup4</code> to make these changes. This library is already installed in your project.</p>
+
+<p>To pass the tests, simply <a target="_blank" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" rel="noopener noreferrer nofollow">find the function</a> allowing us to extract the human-readable text from a web page.<strong> </strong>If you’re curious, feel free to browse through some more information about <a target="_blank" href="https://www.dataquest.io/blog/web-scraping-tutorial-python/" rel="noopener noreferrer nofollow">parsing</a>!</p>
+
+<p>When an invalid URL is entered (URL without a dot and a top-level domain name), the program should output <code class="java">Incorrect URL</code>.</p>
 
 <h2 style="text-align: center;">Example</h2>
 
-<p>The greater-than symbol followed by a space (<code class="language-python">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
 
-<pre><code class="language-python">&gt; python browser.py dir-for-files
+<pre><code class="language-no-highlight">&gt; python browser.py dir-for-files
 &gt; docs.python.org
-
-&lt;!DOCTYPE html&gt;
-
-&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;&lt;title&gt;3.7.4 Documentation&lt;/title&gt;
-    &lt;link rel="stylesheet" target="_blank" href="_static/pydoctheme.css" type="text/css" /&gt;
-    &lt;link rel="stylesheet" target="_blank" href="_static/pygments.css" type="text/css" /&gt;
-
-    &lt;script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="_static/jquery.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="_static/underscore.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="_static/doctools.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="_static/language_data.js"&gt;&lt;/script&gt;
-
-    &lt;script type="text/javascript" src="_static/sidebar.js"&gt;&lt;/script&gt;
-
-    &lt;link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.7.4 documentation"
-          target="_blank" href="_static/opensearch.xml"/&gt;
-    &lt;link rel="author" title="About these documents" target="_blank" href="about.html" /&gt;
-    &lt;link rel="index" title="Index" target="_blank" href="genindex.html" /&gt;
-    &lt;link rel="search" title="Search" target="_blank" href="search.html" /&gt;
-    &lt;link rel="copyright" title="Copyright" target="_blank" href="copyright.html" /&gt;
-    &lt;link rel="shortcut icon" type="image/png" target="_blank" href="_static/py.png" /&gt;
-    &lt;link rel="canonical" target="_blank" href="https://docs.python.org/3/index.html" /&gt;
-
-    &lt;script type="text/javascript" src="_static/copybutton.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="_static/switchers.js"&gt;&lt;/script&gt;
-
-   …  (More than 200 such terrifying strings)
-&gt; exit
-
-</code></pre>
+index
+modules
+Python
+Documentation
+Python 3.7.4 documentation
+Welcome! This is the documentation for Python 3.7.4.
+Parts of the documentation:
+What's new in Python 3.7? or all "What's new" documents since 2.0
+Tutorial start here
+Library Reference keep this under your pillow
+Language Reference describes syntax and language elements
+Python Setup and Usage how to use Python on different platforms
+Python HOWTOs in-depth documents on specific topics
+Installing Python Modules installing from the Python Package Index &amp; other sources
+Distributing Python Modules publishing modules for installation by others
+Extending and Embedding tutorial for C/C++ programmers
+Python/C API reference for C/C++ programmers
+FAQs frequently asked questions (with answers!)
+Indices and tables:
+Global Module Index quick access to all modules
+General Index all functions, classes, terms
+Glossary the most important terms explained
+Search page search this documentation
+Complete Table of Contents lists all sections and subsections
+Meta information:
+Reporting bugs
+About the documentation
+History and License of Python
+Copyright
+&gt; exit</code></pre>
