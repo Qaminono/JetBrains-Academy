@@ -1,90 +1,91 @@
-#  Description
+<h2>Description</h2>
 
-Planning is one thing, but when we need to knuckle down and put our plans into action, we tend to push our tasks back further and further until the last minute, or worse — past the established deadline. It happens to the best of us!
+<p>Planning is one thing, but when we need to knuckle down and put our plans into action, we tend to push our tasks back further and further until the last minute, or worse — past the established deadline. It happens to the best of us! </p>
 
-In this stage, let's implement the ability to see missed tasks and delete them.
+<p>In this stage, let's implement the ability to see missed tasks and delete them.</p>
 
-To delete a row from a table, you need to use the delete() method that accepts an object to delete. As you remember, each row is represented by a Python object:
+<p>To delete a row from a table, you need to use the <code class="language-python">delete()</code> method that accepts an object to delete. As you remember, each row is represented by a Python object:</p>
 
-```python
-from datetime import datetime
+<pre><code class="language-python">from datetime import datetime
 
 # delete all rows where date column equals today's date
 session.query(Table).filter(Table.date == datetime.today().date()).delete()
 
 # delete a specific row
-rows = session.query(Table).filter(Table.date < datetime.today().date()).all()
+rows = session.query(Table).filter(Table.date &lt; datetime.today().date()).all()
 specific_row = rows[0] # in case rows is not empty
 session.delete(specific_row)
 
 # don't forget to commit changes
-session.commit()
-```
+session.commit()</code></pre>
 
-#  Objectives
+<h2>Objectives</h2>
 
-Add the following items into your menu:
+<p>Add the following items into your menu:</p>
 
--    Missed tasks: prints all tasks whose deadline was missed, that is, tasks whose deadline date is earlier than today's date.
--    Delete task: deletes the chosen task. Print 'Nothing to delete' if the tasks list is empty.
+<ul>
+	<li><strong>Missed tasks</strong>: prints all tasks whose deadline was missed, that is, tasks whose deadline date is earlier than today's date.</li>
+	<li><strong>Delete task</strong>: deletes the chosen task. Print 'Nothing to delete' if the tasks list is empty.</li>
+</ul>
 
-Missed tasks should print the tasks ordered by the deadline date.
+<p><strong>Missed tasks</strong> should print the tasks ordered by the deadline date.</p>
 
-Delete task should print all the tasks sorted by the deadline date and ask to enter the number of the task to delete.
+<p><strong>Delete task</strong> should print all the tasks sorted by the deadline date and ask to enter the number of the task to delete.</p>
 
-See in the example what your program should look like.
-#  Example
+<p>See in the example what your program should look like.</p>
 
-The greater-than symbol followed by a space (> ) represents the user input. Note that it's not part of the input.
+<h2>Example</h2>
 
-Output:
+<p>The greater-than symbol followed by a space (<code class="language-python">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
 
-    1) Today's tasks
-    2) Week's tasks
-    3) All tasks
-    4) Missed tasks
-    5) Add task
-    6) Delete task
-    0) Exit
-    > 4
-    
-    Missed tasks:
-    1. Learn the for-loop. 19 Apr
-    
-    1) Today's tasks
-    2) Week's tasks
-    3) All tasks
-    4) Missed tasks
-    5) Add task
-    6) Delete task
-    0) Exit
-    > 6
-    
-    Choose the number of the task you want to delete:
-    1. Learn the for-loop. 19 Apr
-    2. Learn the basics of SQL. 29 Apr
-    > 1
-    The task has been deleted!
-    
-    1) Today's tasks
-    2) Week's tasks
-    3) All tasks
-    4) Missed tasks
-    5) Add task
-    6) Delete task
-    0) Exit
-    > 4
-    
-    Missed tasks:
-    Nothing is missed!
-    
-    1) Today's tasks
-    2) Week's tasks
-    3) All tasks
-    4) Missed tasks
-    5) Add task
-    6) Delete task
-    0) Exit
-    > 0
-    
-    Bye!
+<p><strong>Output:</strong></p>
+
+<pre><code class="language-no-highlight">1) Today's tasks
+2) Week's tasks
+3) All tasks
+4) Missed tasks
+5) Add task
+6) Delete task
+0) Exit
+&gt; 4
+
+Missed tasks:
+1. Learn the for-loop. 19 Apr
+
+1) Today's tasks
+2) Week's tasks
+3) All tasks
+4) Missed tasks
+5) Add task
+6) Delete task
+0) Exit
+&gt; 6
+
+Choose the number of the task you want to delete:
+1. Learn the for-loop. 19 Apr
+2. Learn the basics of SQL. 29 Apr
+&gt; 1
+The task has been deleted!
+
+1) Today's tasks
+2) Week's tasks
+3) All tasks
+4) Missed tasks
+5) Add task
+6) Delete task
+0) Exit
+&gt; 4
+
+Missed tasks:
+Nothing is missed!
+
+1) Today's tasks
+2) Week's tasks
+3) All tasks
+4) Missed tasks
+5) Add task
+6) Delete task
+0) Exit
+&gt; 0
+
+Bye!</code></pre>
