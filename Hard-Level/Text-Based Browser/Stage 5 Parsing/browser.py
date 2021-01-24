@@ -33,10 +33,15 @@ class Browser:
                 else:
                     response = requests.get(("" if self.request.startswith("https://") else "https://") + self.request)
                     soup = bs4.BeautifulSoup(response.content, "html.parser")
-                    all_content = soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'ul', 'ol', 'li'])
-                    print("\n".join([tag.text.strip() for tag in all_content]))
+                    tags_to_searching = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'ul', 'ol', 'li']
+                    all_content = soup.get_text()
+                    without_spaces = " ".join(filter(lambda row: bool(row), [row for row in all_content.split(" ")]))
+                    list_of_content = [row.strip(' |') for row in
+                                       filter(lambda row: bool(row), [row for row in without_spaces.split("\n")])]
+                    site_text = "\n".join(list_of_content)
+                    print(site_text)
                     with open(f"{path}\\{self.request.replace('.', '').replace('com', '')}", "w", encoding="utf-8") as cash:
-                        print("\n".join([tag.text.strip() for tag in all_content]), end="", file=cash)
+                        print(site_text, end="", file=cash)
                         cash.close()
                     self.cashed_sites.append(self.request.replace('.', ''))
                     self.add_to_history()
