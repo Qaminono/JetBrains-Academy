@@ -1,220 +1,222 @@
-#  Description
+<h2>Description</h2>
 
-You have created the foundation of our banking system. Now let's take the opportunity to deposit money into an account, make transfers and close an account if necessary.
+<p>You have created the foundation of our banking system. Now let's take the opportunity to deposit money into an account, make transfers and close an account if necessary.</p>
 
-Now your menu should look like this:
+<p>Now your menu should look like this:</p>
 
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
+<pre><code class="language-no-highlight">1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit</code></pre>
 
-If the user asks for __Balance__, you should read the balance of the account from the database and output it into the console.
+<p>If the user asks for <code class="java">Balance</code>, you should read the balance of the account from the database and output it into the console.</p>
 
-__Add income__ item should allow us to deposit money to the account.
+<p><code class="java">Add income</code> item should allow us to deposit money to the account.</p>
 
-__Do transfer__ item should allow transferring money to another account. You should handle the following errors:
+<p><code class="java">Do transfer</code> item should allow transferring money to another account. You should handle the following errors:</p>
 
--    If the user tries to transfer more money than he/she has, output: "Not enough money!"
--    If the user tries to transfer money to the same account, output the following message: “You can't transfer money to the same account!”
--    If the receiver's card number doesn’t pass the Luhn algorithm, you should output: “Probably you made a mistake in the card number. Please try again!”
--    If the receiver's card number doesn’t exist, you should output: “Such a card does not exist.”
--    If there is no error, ask the user how much money they want to transfer and make the transaction.
+<ul>
+	<li>If the user tries to transfer more money than he/she has, output: "Not enough money!"</li>
+	<li>If the user tries to transfer money to the same account, output the following message: “You can't transfer money to the same account!”</li>
+	<li>If the receiver's card number doesn’t pass the Luhn algorithm, you should output: “Probably you made a mistake in the card number. Please try again!”</li>
+	<li>If the receiver's card number doesn’t exist, you should output: “Such a card does not exist.”</li>
+	<li>If there is no error, ask the user how much money they want to transfer and make the transaction.</li>
+</ul>
 
-If the user chooses the __Close account__ item, you should delete that account from the database.
+<p>If the user chooses the <code class="java">Close account</code> item, you should delete that account from the database.</p>
 
-Do not forget to commit your DB changes right after executing a query!
+<p><div class="alert alert-primary">Do not forget to commit your DB changes right after executing a query!</div></p>
 
-#  Examples
+<h2>Examples</h2>
 
-The symbol > represents the user input. Notice that it's not a part of the input.
+<p>The symbol <code class="java">&gt;</code> represents the user input. Notice that it's not a part of the input.</p>
 
-Example 1:
+<p><strong>Example 1:</strong></p>
 
-    1. Create an account
-    2. Log into account
-    0. Exit
-    >1
-    
-    Your card has been created
-    Your card number:
-    4000009455296122
-    Your card PIN:
-    1961
-    
-    1. Create an account
-    2. Log into account
-    0. Exit
-    >1
-    
-    Your card has been created
-    Your card number:
-    4000003305160034
-    Your card PIN:
-    5639
-    
-    1. Create an account
-    2. Log into account
-    0. Exit
-    >2
-    
-    Enter your card number:
-    >4000009455296122
-    Enter your PIN:
-    >1961
-    
-    You have successfully logged in!
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >2
-    
-    Enter income:
-    >10000
-    Income was added!
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >1
-    
-    Balance: 10000
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >3
-    
-    Transfer
-    Enter card number:
-    >4000003305160035
-    Probably you made a mistake in the card number. Please try again!
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >3
-    
-    Transfer
-    Enter card number:
-    >4000003305061034
-    Such a card does not exist.
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >3
-    
-    Transfer
-    Enter card number:
-    >4000003305160034
-    Enter how much money you want to transfer:
-    >15000
-    Not enough money!
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >3
-    
-    Transfer
-    Enter card number:
-    >4000003305160034
-    Enter how much money you want to transfer:
-    >5000
-    Success!
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >1
-    
-    Balance: 5000
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    
-    >0
-    Bye!
+<pre><code class="language-no-highlight">1. Create an account
+2. Log into account
+0. Exit
+&gt;1
 
-Example 2:
+Your card has been created
+Your card number:
+4000009455296122
+Your card PIN:
+1961
 
-    1. Create an account
-    2. Log into account
-    0. Exit
-    >1
-    
-    Your card has been created
-    Your card number:
-    4000007916053702
-    Your card PIN:
-    6263
-    
-    1. Create an account
-    2. Log into account
-    0. Exit
-    >2
-    
-    Enter your card number:
-    >4000007916053702
-    Enter your PIN:
-    >6263
-    
-    You have successfully logged in!
-    
-    1. Balance
-    2. Add income
-    3. Do transfer
-    4. Close account
-    5. Log out
-    0. Exit
-    >4
-    
-    The account has been closed!
-    
-    1. Create an account
-    2. Log into account
-    0. Exit
-    >2
-    
-    Enter your card number:
-    >4000007916053702
-    Enter your PIN:
-    >6263
-    
-    Wrong card number or PIN!
-    
-    1. Create an account
-    2. Log into account
-    0. Exit
-    >0
-    
-    Bye!
+1. Create an account
+2. Log into account
+0. Exit
+&gt;1
+
+Your card has been created
+Your card number:
+4000003305160034
+Your card PIN:
+5639
+
+1. Create an account
+2. Log into account
+0. Exit
+&gt;2
+
+Enter your card number:
+&gt;4000009455296122
+Enter your PIN:
+&gt;1961
+
+You have successfully logged in!
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;2
+
+Enter income:
+&gt;10000
+Income was added!
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;1
+
+Balance: 10000
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;3
+
+Transfer
+Enter card number:
+&gt;4000003305160035
+Probably you made a mistake in the card number. Please try again!
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;3
+
+Transfer
+Enter card number:
+&gt;4000003305061034
+Such a card does not exist.
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;3
+
+Transfer
+Enter card number:
+&gt;4000003305160034
+Enter how much money you want to transfer:
+&gt;15000
+Not enough money!
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;3
+
+Transfer
+Enter card number:
+&gt;4000003305160034
+Enter how much money you want to transfer:
+&gt;5000
+Success!
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;1
+
+Balance: 5000
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+
+&gt;0
+Bye!</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code class="language-no-highlight">1. Create an account
+2. Log into account
+0. Exit
+&gt;1
+
+Your card has been created
+Your card number:
+4000007916053702
+Your card PIN:
+6263
+
+1. Create an account
+2. Log into account
+0. Exit
+&gt;2
+
+Enter your card number:
+&gt;4000007916053702
+Enter your PIN:
+&gt;6263
+
+You have successfully logged in!
+
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
+0. Exit
+&gt;4
+
+The account has been closed!
+
+1. Create an account
+2. Log into account
+0. Exit
+&gt;2
+
+Enter your card number:
+&gt;4000007916053702
+Enter your PIN:
+&gt;6263
+
+Wrong card number or PIN!
+
+1. Create an account
+2. Log into account
+0. Exit
+&gt;0
+
+Bye!</code></pre>
