@@ -52,14 +52,46 @@ def multiply_matrices():
     return "The result is:\n" + "\n".join([" ".join(row) for row in str_c])
 
 
+def transpose_matrix():
+    def main_diagonal():
+        return [[row[i] for row in matrix] for i in range(dimensions[1])]
+
+    def side_diagonal():
+        return [[row[i] for row in matrix][::-1] for i in range(dimensions[1])][::-1]
+
+    def vertical_line():
+        return [row[::-1] for row in matrix]
+
+    def horizontal_line():
+        return matrix[::-1]
+
+    commands = {"1": main_diagonal,
+                "2": side_diagonal,
+                "3": vertical_line,
+                "4": horizontal_line}
+    choice = input("1. Main diagonal\n"
+                   "2. Side diagonal\n"
+                   "3. Vertical line\n"
+                   "4. Horizontal line\n"
+                   "Your choice: ")
+    print("Enter size of first matrix: ", end="")
+    dimensions = [int(num) for num in input().split(" ")]
+    print("Enter matrix: ")
+    matrix = [[num for num in input().split(" ")] for _ in range(dimensions[0])]
+    transposed_matrix = commands[choice]()
+    return "The result is:\n" + "\n".join([" ".join(row) for row in transposed_matrix])
+
+
 commands = {"1": adding,
             "2": multiplication_by_constant,
-            "3": multiply_matrices}
+            "3": multiply_matrices,
+            "4": transpose_matrix}
 
 while True:
     choice = input("1. Add matrices\n"
                    "2. Multiply matrix by a constant\n"
                    "3. Multiply matrices\n"
+                   "4. Transpose matrix\n"
                    "0. Exit\n"
                    "Your choice: \n")
     if choice == "0":
