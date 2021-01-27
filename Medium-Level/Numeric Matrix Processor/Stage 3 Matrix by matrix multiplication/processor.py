@@ -54,7 +54,8 @@ def multiply_matrices():
 
 commands = {"1": adding,
             "2": multiplication_by_constant,
-            "3": multiply_matrices}
+            "3": multiply_matrices,
+            "0": lambda x: x - 1}
 
 while True:
     choice = input("1. Add matrices\n"
