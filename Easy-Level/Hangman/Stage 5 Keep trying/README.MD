@@ -1,88 +1,92 @@
-# Description
-Let's make the game iterative. It's time to make it resemble the classical Hangman a bit more: a player should guess letters in the word instead of typing the entire word at once. If the player guesses a letter, it should be uncovered in the word. For now, start with the defeat case and add 8 tries to guess a letter that appears in the word. When the player runs out of attempts, the game ends.
+<h2>Description</h2>
 
-Later we will determine the winning conditions, but in this stage, let's see how well our player guesses the word on every attempt.
+<p>Let's make the game iterative. Now it's time to make the game resemble the classic version of Hangman a bit more. The player should now guess letters in the word instead of typing the entire word all at once. If the player guesses a letter, it should be uncovered in the word. For now, start by building the defeat condition and add 8 tries to guess a letter that appears in the word. When the player runs out of attempts, the game ends.</p>
 
-# Objectives
-Now your game should work the following way:
+<p>Later we will determine the winning conditions, but in this stage, let's just see how well our player guesses the word on each attempt.</p>
 
-1. A player has exactly 8 tries and enters letters. If a player has more tries but he actually guessed the word, it doesn't mean anything.
+<h2>Objectives</h2>
 
-2. If the letter doesn't occur in the word, the computer takes one try away, even if the user already inputted this letter before.
+<p>Now your game should work as follows:</p>
 
-3. If the player doesn't have any more attempts, the game should end and the program should show a losing message. Otherwise, the player can continue to input letters.
+<ol>
+	<li>A player has <strong>exactly 8 tries</strong> and enters letters. Nothing changes if a player has more tries left but they have already guessed the word.</li>
+	<li>If the letter doesn't appear in the word, the computer takes one try away – even if the user has already guessed this letter.</li>
+	<li>If the player doesn't have any more attempts, the game should end and the program should show a losing message. Otherwise, the player can continue to input letters.</li>
+	<li>Also, the word should be selected from our list: <code class="java">'python', 'java', 'kotlin', 'javascript'</code>, so that your program can be tested more reliably.</li>
+</ol>
 
-4. Also, use our previous word list: 'python', 'java', 'kotlin', 'javascript' so that your program can be tested more reliably.
+<p><div class="alert alert-warning">Please, make sure that your program's output formatting precisely follows the example. Pay attention to the empty lines between tries and at the end.</div></p>
 
-Please, make sure that your program's output formatting precisely follows the example output formatting. Pay attention to the empty lines between tries and in the end.
-# Examples
-The greater-than symbol followed by space (> ) represents the user input. Notice that it's not the part of the input.
+<h2>Examples</h2>
 
-Example 1
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the output.</p>
 
-    H A N G M A N
+<p><strong>Example 1</strong></p>
 
-    ----------
-    Input a letter: > a
+<pre><code class="language-no-highlight">H A N G M A N
 
-    -a-a------
-    Input a letter: > i
+----------
+Input a letter: &gt; a
 
-    -a-a---i--
-    Input a letter: > o
-    No such letter in the word
+-a-a------
+Input a letter: &gt; i
 
-    -a-a---i--
-    Input a letter: > z
-    No such letter in the word
+-a-a---i--
+Input a letter: &gt; o
+That letter doesn't appear in the word
 
-    -a-a---i--
-    Input a letter: > p
-    No such letter in the word
+-a-a---i--
+Input a letter: &gt; z
+That letter doesn't appear in the word
 
-    -a-a---ip-
-    Input a letter: > p
+-a-a---i--
+Input a letter: &gt; l
+That letter doesn't appear in the word
 
-    -a-a---ip-
-    Input a letter: > h
-    No such letter in the word
+-a-a---ip-
+Input a letter: &gt; p
 
-    -a-a---ip-
-    Input a letter: > k
-    No such letter in the word
+-a-a---ip-
+Input a letter: &gt; h
+That letter doesn't appear in the word
 
-    Thanks for playing!
-    We'll see how well you did in the next stage
-Example 2
+-a-a---ip-
+Input a letter: &gt; k
+That letter doesn't appear in the word
 
-    H A N G M A N
+Thanks for playing!
+We'll see how well you did in the next stage</code></pre>
 
-    ----
-    Input a letter: > j
+<p><strong>Example 2</strong></p>
 
-    j---
-    Input a letter: > i
-    No such letter in the word
+<pre><code class="language-no-highlight">H A N G M A N
 
-    j---
-    Input a letter: > g
-    No such letter in the word
+----
+Input a letter: &gt; j
 
-    j---
-    Input a letter: > o
-    No such letter in the word
+j---
+Input a letter: &gt; i
+That letter doesn't appear in the word
 
-    j---
-    Input a letter: > a
+j---
+Input a letter: &gt; g
+That letter doesn't appear in the word
 
-    ja-a
-    Input a letter: > v
+j---
+Input a letter: &gt; o
+That letter doesn't appear in the word
 
-    java
-    Input a letter: > a
+j---
+Input a letter: &gt; a
 
-    java
-    Input a letter: > j
+ja-a
+Input a letter: &gt; v
 
-    Thanks for playing!
-    We'll see how well you did in the next stage
+java
+Input a letter: &gt; a
+
+java
+Input a letter: &gt; j
+
+Thanks for playing!
+We'll see how well you did in the next stage</code></pre>

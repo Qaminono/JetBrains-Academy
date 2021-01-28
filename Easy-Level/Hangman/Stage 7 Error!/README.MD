@@ -1,120 +1,124 @@
-# Description
-Now that we are done with the basics, let's work on some details.
+<h2>Description</h2>
 
-In the previous stage if the user entered the same letter twice or typed a cyrillic letter, the program reduced the number of attempts regardless if this was a correct letter or not. But it is not fair to the user, isn't it? He gains no additional information about the situation on the field yet the program still reduces his attempts count. Let's fix it!
+<p>Now that we are done with the basics, let's work on perfecting some details.</p>
 
-# Objectives
-1. If the user enters the same letter twice then the program should output ``You already typed this letter ``.
+<p>In the previous stage, if the user entered the same letter twice, the program reduced the number of remaining attempts regardless of whether this was a correct letter or not. This doesn’t seem fair to the player, does it? They gain no additional information about the situation on the field yet the program still reduces their remaining attempts. Let's fix it!</p>
 
-2. Also, you should check if the user prints an English lowercase letter or not. If not, the program should print ``It is not an ASCII lowercase letter`` .
+<h2>Objectives</h2>
 
-3. Also, you should check if the user printed exactly one letter. If not, the program should print ``You should input a single letter`` . Remember that zero is also not one!
+<ol>
+	<li>If the user enters the same letter twice, then the program should output <code class="java">You've already guessed this letter</code> . This message should also be printed if the user inputs a letter that doesn't appear in the word. The number of attempts shouldn't be decreased in this case. </li>
+	<li>Also, you should check to make sure the player entered an English lowercase letter. If not, the program should print <code class="java">Please enter a lowercase English letter</code> . </li>
+	<li>You should also check if the player entered exactly one letter. If not, the program should print <code class="java">You should input a single letter</code> . Remember that zero is also not one!</li>
+	<li>Note that none of these three errors should reduce the number of remaining attempts!</li>
+</ol>
 
-4. Note that all these three errors should not reduce attempts count!
+<p><div class="alert alert-warning">Please, make sure that your program's output formatting precisely follows the output formatting in the example. Pay attention to the empty lines between tries and in the end.</div></p>
 
-Please, make sure that your program's output formatting precisely follows the example output formatting. Pay attention to the empty lines between tries and in the end.
-#  Examples
-The greater-than symbol followed by space (> ) represents the user input. Notice that it's not the part of the input.
+<h2>Examples</h2>
 
-Example 1
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the output.</p>
 
-    H A N G M A N
+<p><strong>Example 1</strong></p>
 
-    ----------
-    Input a letter: > a
+<pre><code class="language-no-highlight">H A N G M A N
 
-    -a-a------
-    Input a letter: > i
+----------
+Input a letter: &gt; a
 
-    -a-a---i--
-    Input a letter: > o
-    No such letter in the word
+-a-a------
+Input a letter: &gt; i
 
-    -a-a---i--
-    Input a letter: > o
-    You already typed this letter
+-a-a---i--
+Input a letter: &gt; o
+That letter doesn't appear in the word
 
-    -a-a---i--
-    Input a letter: > p
+-a-a---i--
+Input a letter: &gt; o
+You've already guessed this letter
 
-    -a-a---ip-
-    Input a letter: > p
-    You already typed this letter
+-a-a---i--
+Input a letter: &gt; p
 
-    -a-a---ip-
-    Input a letter: > h
-    No such letter in the word
+-a-a---ip-
+Input a letter: &gt; p
+You've already guessed this letter
 
-    -a-a---ip-
-    Input a letter: > k
-    No such letter in the word
+-a-a---ip-
+Input a letter: &gt; h
+That letter doesn't appear in the word
 
-    -a-a---ip-
-    Input a letter: > a
-    You already typed this letter
+-a-a---ip-
+Input a letter: &gt; k
+That letter doesn't appear in the word
 
-    -a-a---ip-
-    Input a letter: > z
-    No such letter in the word
+-a-a---ip-
+Input a letter: &gt; a
+You've already guessed this letter
 
-    -a-a---ipt
-    Input a letter: > t
+-a-a---ip-
+Input a letter: &gt; z
+That letter doesn't appear in the word
 
-    -a-a---ipt
-    Input a letter: > x
-    No such letter in the word
+-a-a---ipt
+Input a letter: &gt; t
 
-    -a-a---ipt
-    Input a letter: > b
-    No such letter in the word
+-a-a---ipt
+Input a letter: &gt; x
+That letter doesn't appear in the word
 
-    -a-a---ipt
-    Input a letter: > d
-    No such letter in the word
+-a-a---ipt
+Input a letter: &gt; b
+That letter doesn't appear in the word
 
-    -a-a---ipt
-    Input a letter: > w
-    No such letter in the word
-    You are hanged!
-Example 2
+-a-a---ipt
+Input a letter: &gt; d
+That letter doesn't appear in the word
 
-    H A N G M A N
+-a-a---ipt
+Input a letter: &gt; w
+That letter doesn't appear in the word
+You lost!</code></pre>
 
-    ----
-    Input a letter: > j
+<p><strong>Example 2</strong></p>
 
-    j---
-    Input a letter: > i
-    No such letter in the word
+<pre><code class="language-no-highlight">H A N G M A N
 
-    j---
-    Input a letter: > +
-    It is not an ASCII lowercase letter
+----
+Input a letter: &gt; j
 
-    j---
-    Input a letter: > A
-    It is not an ASCII lowercase letter
+j---
+Input a letter: &gt; i
+That letter doesn't appear in the word
 
-    j---
-    Input a letter: > ii
-    You should input a single letter
+j---
+Input a letter: &gt; +
+Please enter a lowercase English letter
 
-    j---
-    Input a letter: > ++
-    You should input a single letter
+j---
+Input a letter: &gt; A
+Please enter a lowercase English letter
 
-    j---
-    Input a letter: >
-    You should input a single letter
+j---
+Input a letter: &gt; ii
+You should input a single letter
 
-    j---
-    Input a letter: > g
-    No such letter in the word
+j---
+Input a letter: &gt; ++
+You should input a single letter
 
-    j---
-    Input a letter: > a
+j---
+Input a letter: &gt;
+You should input a single letter
 
-    ja-a
-    Input a letter: > v
-    You guessed the word java!
-    You survived!
+j---
+Input a letter: &gt; g
+That letter doesn't appear in the word
+
+j---
+Input a letter: &gt; a
+
+ja-a
+Input a letter: &gt; v
+You guessed the word java!
+You survived!</code></pre>
