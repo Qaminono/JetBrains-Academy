@@ -1,36 +1,44 @@
-# Description
-However, our game should show the field in an "intermediate" states too. Let's try to visualize different combinations that the user will determine from the input. It is also important to think about the interface and set boundaries for our field.
+<h2 style="text-align: center;">Description</h2>
 
-# Objectives
-In this stage, you should write a program that:
+<p>Our program should be able to display the grid at all stages of the game. Now we’re going to write a program that allows the user to enter a string representing the game state and correctly prints the 3x3 game grid based on this input. We’ll also add some boundaries around the game grid.</p>
 
-Reads 9 symbols from the input and writes an appropriate 3x3 field. Elements of the field can contain only 'X', 'O' and '_' symbols.
-Sets the field to a specific format, i.e. field should start and end with ---------, all lines in between should start and end with '|' symbol and everything in the middle should be separated with a single space.
-# Examples
-Examples below show how your output should look.
-The greater-than symbol followed by space (> ) represents the user input. Notice that it's not the part of the input.
+<h2 style="text-align: center;">Objectives</h2>
 
-Example 1:
+<p>In this stage, you will write a program that:</p>
 
-    Enter cells: > O_OXXO_XX
-    ---------
-    | O _ O |
-    | X X O |
-    | _ X X |
-    ---------
-Example 2:
+<ol>
+	<li>Reads a string of 9 symbols from the input and displays them to the user in a 3x3 grid. The grid can contain only <code class="java">X</code>, <code class="java">O</code> and <code class="java">_</code> symbols.</li>
+	<li>Outputs a line of dashes <code class="java">---------</code> above and below the grid, adds a pipe <code class="java">|</code> symbol to the beginning and end of each line of the grid, and adds a space between all characters in the grid.  </li>
+</ol>
 
-    Enter cells: > OXO__X_OX
-    ---------
-    | O X O |
-    | _ _ X |
-    | _ O X |
-    ---------
-Example 3:
+<h2 style="text-align: center;">Examples</h2>
 
-    Enter cells: > _XO__X___
-    ---------
-    | _ X O |
-    | _ _ X |
-    | _ _ _ |
-    ---------
+<p>Examples below show how your output should look.<br>
+Notice that after <code class="java">Enter cells:</code> comes the user input.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: O_OXXO_XX
+---------
+| O _ O |
+| X X O |
+| _ X X |
+---------</code></pre>
+
+<p><strong>Example 2: </strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: OXO__X_OX
+---------
+| O X O |
+| _ _ X |
+| _ O X |
+---------</code></pre>
+
+<p><strong>Example 3: </strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: _XO__X___
+---------
+| _ X O |
+| _ _ X |
+| _ _ _ |
+---------</code></pre>

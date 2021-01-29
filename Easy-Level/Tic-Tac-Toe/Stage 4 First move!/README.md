@@ -1,151 +1,162 @@
-# Description
-In addition to analyzing the field, it is equally important to add the ability to select a cell for your move. Now you need to implement human moves. Let's divide the field into cells.
+<h2 style="text-align: center;">Description</h2>
 
-Suppose the bottom left cell has the coordinates (1, 1) and the top right cell has the coordinates (3, 3) like in this table:
+<p>It’s time to make our game interactive! Now we’re going to add the ability for a user to make a move.</p>
 
-(1, 3) (2, 3) (3, 3)
+<p>To do this, we need to divide the grid into cells.</p>
 
-(1, 2) (2, 2) (3, 2)
+<p>Suppose the top left cell has the coordinates (1, 1) and the bottom right cell has the coordinates (3, 3) like in this table:<br>
+<br>
+(1, 1) (1, 2) (1, 3)<br>
+(2, 1) (2, 2) (2, 3)<br>
+(3, 1) (3, 2) (3, 3)</p>
 
-(1, 1) (2, 1) (3, 1)
+<p>The program should ask the user to enter the coordinates of the cell where they want to make a move.</p>
 
-The program should ask to enter the coordinates where the user wants to make a move.
+<p>In this stage, the user plays as X, not O. Keep in mind that the first coordinate goes from left to right and the second coordinate goes from top to bottom. Also note that coordinates start with 1 and can be 1, 2, or 3.</p>
 
-Note that in this stage user moves as X, not O. Keep in mind that the first coordinate goes from left to right and the second coordinate goes from bottom to top. Also, notice that coordinates start with 1 and can be 1, 2 or 3.
+<p>What happens if the user enters incorrect coordinates? The user could enter symbols instead of numbers, or enter coordinates representing occupied cells or cells that aren’t even on the grid. You need to check the user's input and catch possible exceptions.</p>
 
-But what if the user enters incorrect coordinates? The user could enter symbols instead of numbers or enter coordinates representing occupied cells. You need to prevent all of that by checking a user's input and catching possible exceptions.
+<h2 style="text-align: center;">Objectives</h2>
 
-# Objectives
-The program should work in the following way:
+<p>The program should work as follows:</p>
 
-1) Get the 3x3 field from the input as in the previous stages.
-2) Output this 3x3 field with cells before the user's move.
-3) Then ask the user about his next move.
-4) Then the user should input 2 numbers that represent the cell on which user wants to make his X or O. (9 symbols representing the field would be on the first line and these 2 numbers would be on the second line of the user input)
-5) Analyze user input and show messages in the following situations:
+<ol>
+	<li>Get the 3x3 grid from the input as in the previous stages.</li>
+	<li>Output this 3x3 grid as in the previous stages.</li>
+	<li>Prompt the user to make a move.</li>
+	<li>The user should input 2 numbers that represent the cell where they want to place their X. (the 9 symbols representing the field will be the first line of input, and the 2 coordinate numbers will be the second line of input)</li>
+	<li>Analyze user input and show messages in the following situations:<br>
+	<code class="java">This cell is occupied! Choose another one!</code> if the cell is not empty.<br>
+	<code class="java">You should enter numbers!</code> if the user enters non-numeric symbols in the coordinates input.<br>
+	<code class="java">Coordinates should be from 1 to 3!</code> if the user enters coordinates outside the game grid.</li>
+	<li>Update the grid to include the user's move and print the updated grid to the console.</li>
+</ol>
 
-    -"This cell is occupied! Choose another one!" - if the cell is not empty;
-  
-    -"You should enter numbers!" - if the user enters other symbols;
-  
-    -"Coordinates should be from 1 to 3!" - if the user goes beyond the field.
-  
-6) Then output the table including the user's most recent move.
-The program should also check user input. If the user input is unsuitable, the program should ask him to enter coordinates again.
+<p>The program should also check the user’s input. If the input is unsuitable, the program should tell the user why their input was wrong, and prompt them to enter coordinates again. </p>
 
-So, you need to output a field from the first line of the input and then ask the user to enter a move. Keep asking until the user enters coordinate that represents an empty cell on the field and after that output the field with that move. You should output the field only 2 times - before the move and after a legal move.
+<p>To summarize, you need to output the game grid based on the first line of input, and then ask the user to enter a move. Keep asking until the user enters coordinates that represent an empty cell on the grid, update the grid to include that move, and then output it to the console. You should output the field only 2 times: once before the user’s move, and once after the user has entered a legal move.</p>
 
-Do not delete code that checks for table state; it will be useful in the future.
+<p><em>Do not delete the code you already wrote</em> that analyzes the game state; you will need it in the final step of this project.</p>
 
-# Examples
-The examples below shows how your program should work.
-The greater-than symbol followed by space (> ) represents the user input. Notice that it's not the part of the input.
+<p><div class="alert alert-warning">The project was changed. Now the coordinates start from the upper left corner. Look closely at the examples.</div></p>
 
-Example 1:
+<h2 style="text-align: center;">Examples</h2>
 
-    Enter cells: > X_X_O____
-    ---------
-    | X   X |
-    |   O   |
-    |       |
-    ---------
-    Enter the coordinates: > 1 1
-    ---------
-    | X   X |
-    |   O   |
-    | X     |
-    ---------
-Example 2:
+<p>The examples below show how your program should work. </p>
 
-    Enter cells: > _XXOO_OX_
-    ---------
-    |   X X |
-    | O O   |
-    | O X   |
-    ---------
-    Enter the coordinates: > 1 3
-    ---------
-    | X X X |
-    | O O   |
-    | O X   |
-    ---------
-Example 3:
+<p>Notice that after <code class="java">Enter cells:</code> and <code class="java">Enter the coordinates:</code> comes the user input.</p>
 
-    Enter cells: > _XXOO_OX_
-    ---------
-    |   X X |
-    | O O   |
-    | O X   |
-    ---------
-    Enter the coordinates: > 3 1
-    ---------
-    |   X X |
-    | O O   |
-    | O X X |
-    ---------
-Example 4:
+<p><strong>Example 1:</strong></p>
 
-    Enter cells: > _XXOO_OX_
-    ---------
-    |   X X |
-    | O O   |
-    | O X   |
-    ---------
-    Enter the coordinates: > 3 2
-    ---------
-    |   X X |
-    | O O X |
-    | O X   |
-    ---------
-Example 5:
+<pre><code class="language-no-highlight">Enter cells: X_X_O____
+---------
+| X   X |
+|   O   |
+|       |
+---------
+Enter the coordinates: 3 1
+---------
+| X   X |
+|   O   |
+| X     |
+---------</code></pre>
 
-    Enter cells: > _XXOO_OX_
-    ---------
-    |   X X |
-    | O O   |
-    | O X   |
-    ---------
-    Enter the coordinates: > 1 1
-    This cell is occupied! Choose another one!
-    Enter the coordinates: > 1 3
-    ---------
-    | X X X |
-    | O O   |
-    | O X   |
-    ---------
-Example 6:
+<p><strong>Example 2: </strong></p>
 
-    Enter cells: > _XXOO_OX_
-    ---------
-    |   X X |
-    | O O   |
-    | O X   |
-    ---------
-    Enter the coordinates: > one
-    You should enter numbers!
-    Enter the coordinates: > one three
-    You should enter numbers!
-    Enter the coordinates: > 1 3
-    ---------
-    | X X X |
-    | O O   |
-    | O X   |
-    ---------
-Example 7:
+<pre><code class="language-no-highlight">Enter cells: _XXOO_OX_
+---------
+|   X X |
+| O O   |
+| O X   |
+---------
+Enter the coordinates: 1 1
+---------
+| X X X |
+| O O   |
+| O X   |
+---------</code></pre>
 
-    Enter cells: > _XXOO_OX_
-    ---------
-    |   X X |
-    | O O   |
-    | O X   |
-    ---------
-    Enter the coordinates: > 4 1
-    Coordinates should be from 1 to 3!
-    Enter the coordinates: > 1 4
-    Coordinates should be from 1 to 3!
-    Enter the coordinates: > 1 3
-    ---------
-    | X X X |
-    | O O   |
-    | O X   |
-    ---------
+<p><strong>Example 3: </strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: _XXOO_OX_
+---------
+|   X X |
+| O O   |
+| O X   |
+---------
+Enter the coordinates: 3 3
+---------
+|   X X |
+| O O   |
+| O X X |
+---------</code></pre>
+
+<p><strong>Example 4:</strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: _XXOO_OX_
+---------
+|   X X |
+| O O   |
+| O X   |
+---------
+Enter the coordinates: 2 3
+---------
+|   X X |
+| O O X |
+| O X   |
+---------</code></pre>
+
+<p><strong>Example 5:</strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: _XXOO_OX_
+---------
+|   X X |
+| O O   |
+| O X   |
+---------
+Enter the coordinates: 3 1
+This cell is occupied! Choose another one!
+Enter the coordinates: 1 1
+---------
+| X X X |
+| O O   |
+| O X   |
+---------</code></pre>
+
+<p><strong>Example 6:</strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: _XXOO_OX_
+---------
+|   X X |
+| O O   |
+| O X   |
+---------
+Enter the coordinates: one
+You should enter numbers!
+Enter the coordinates: one one
+You should enter numbers!
+Enter the coordinates: 1 1
+---------
+| X X X |
+| O O   |
+| O X   |
+---------</code></pre>
+
+<p><strong>Example 7:</strong></p>
+
+<pre><code class="language-no-highlight">Enter cells: _XXOO_OX_
+---------
+|   X X |
+| O O   |
+| O X   |
+---------
+Enter the coordinates: 4 1
+Coordinates should be from 1 to 3!
+Enter the coordinates: 1 4
+Coordinates should be from 1 to 3!
+Enter the coordinates: 1 1
+---------
+| X X X |
+| O O   |
+| O X   |
+---------</code></pre>

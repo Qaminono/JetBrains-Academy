@@ -1,75 +1,81 @@
-# Description
-We are at the finish line! But playing alone is not so interesting, is it? Let's combine our successes in past stages and get Tic-Tac-Toe with the ability to play from the beginning (empty field) to the result (win or draw).
+<h2 style="text-align: center;">Description</h2>
 
-Now it is time to make a working game!
+<p>Our game is almost ready! Now let's combine what we’ve learned in the previous stages to make a game of tic-tac-toe that two players can play from the beginning (with an empty grid) through to the end (until there is a draw, or one of the players wins).</p>
 
-In the last stage, make it so you can play a full game with a friend. First one of you moves as X, and then the other one moves as O.
+<p>The first player has to play as X and their opponent plays as O.</p>
 
-# Objectives
-In this stage, you should write a program that:
+<h2 style="text-align: center;">Objectives</h2>
 
-1) Prints an empty field at the beginning of the game.
-2) Creates a game loop where the program asks the user to enter the cell coordinates, analyzes the move for correctness and shows a field with the changes if everything is ok.
-3) Ends the game when someone wins or there is a draw.
-You need to output the final result after the end of the game.
+<p>In this stage, you should write a program that:</p>
 
-Good luck gaming!
+<ol>
+	<li>Prints an empty grid at the beginning of the game.</li>
+	<li>Creates a game loop where the program asks the user to enter the cell coordinates, analyzes the move for correctness and shows a grid with the changes if everything is okay.</li>
+	<li>Ends the game when someone wins or there is a draw.</li>
+</ol>
 
-# Example
-The example below shows how your program should work.
-The greater-than symbol followed by space (> ) represents the user input. Notice that it's not the part of the input.
+<p>You need to output the final result at the end of the game.</p>
 
-    ---------
-    |       |
-    |       |
-    |       |
-    ---------
-    Enter the coordinates: > 2 2
-    ---------
-    |       |
-    |   X   |
-    |       |
-    ---------
-    Enter the coordinates: > 2 2
-    This cell is occupied! Choose another one!
-    Enter the coordinates: > two two
-    You should enter numbers!
-    Enter the coordinates: > 1 4
-    Coordinates should be from 1 to 3!
-    Enter the coordinates: > 1 3
-    ---------
-    | O     |
-    |   X   |
-    |       |
-    ---------
-    Enter the coordinates: > 3 1
-    ---------
-    | O     |
-    |   X   |
-    |     X |
-    ---------
-    Enter the coordinates: > 1 2
-    ---------
-    | O     |
-    | O X   |
-    |     X |
-    ---------
-    Enter the coordinates: > 1 1
-    ---------
-    | O     |
-    | O X   |
-    | X   X |
-    ---------
-    Enter the coordinates: > 3 2
-    ---------
-    | O     |
-    | O X O |
-    | X   X |
-    ---------
-    Enter the coordinates: > 2 1
-    ---------
-    | O     |
-    | O X O |
-    | X X X |
-    ---------
-    X wins
+<p>Good luck!</p>
+
+<p><div class="alert alert-warning">The project was changed. Now the coordinates start from the upper left corner. Look closely at the examples.</div></p>
+
+<h2 style="text-align: center;">Example</h2>
+
+<p>The example below shows how your program should work.<br>
+Notice that after <code class="java">Enter the coordinates:</code> comes the user input.</p>
+
+<pre><code class="language-no-highlight">---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Enter the coordinates: 2 2
+This cell is occupied! Choose another one!
+Enter the coordinates: two two
+You should enter numbers!
+Enter the coordinates: 1 4
+Coordinates should be from 1 to 3!
+Enter the coordinates: 1 1
+---------
+| O     |
+|   X   |
+|       |
+---------
+Enter the coordinates: 3 3
+---------
+| O     |
+|   X   |
+|     X |
+---------
+Enter the coordinates: 2 1
+---------
+| O     |
+| O X   |
+|     X |
+---------
+Enter the coordinates: 3 1
+---------
+| O     |
+| O X   |
+| X   X |
+---------
+Enter the coordinates: 2 3
+---------
+| O     |
+| O X O |
+| X   X |
+---------
+Enter the coordinates: 3 2
+---------
+| O     |
+| O X O |
+| X X X |
+---------
+X wins</code></pre>
