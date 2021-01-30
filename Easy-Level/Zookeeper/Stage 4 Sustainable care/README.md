@@ -1,25 +1,32 @@
-#  Description
+<h2 style="text-align: center;">Description</h2>
 
-Now it's time to make our project user-friendly. In this final stage, you'll make your software ready for the zoo staff to use. Your program should understand the habitat numbers, show the animals, and be able to work continuously without having to be restarted.
-#  Objectives
+<p>Now it's time to make our project user-friendly. In this final stage, you'll make your software ready for the zoo staff to use. Your program should understand the habitat numbers, show the animals, and be able to work continuously without having to be restarted.</p>
 
-Your tasks at this point:
+<h2 style="text-align: center;">Objectives</h2>
 
-1.    Your program should repeat the behavior from the previous stage, but now in a loop.
+<p>Your tasks at this point:</p>
 
-2.    Do not forget to include an exit opportunity: inputting exit should end the program.
+<ol>
+	<li>
+	<p>Your program should repeat the behavior from the previous stage, but now in a loop.</p>
+	</li>
+	<li>
+	<p>Do not forget to include an exit opportunity: inputting <code class="java">exit</code> should end the program.</p>
+	</li>
+	<li>
+	<p>When the program is done running, it should print: <code class="java">See you later!</code></p>
+	</li>
+</ol>
 
-3.    When the program is done running, it should print: See you later!
+<h2 style="text-align: center;">Examples</h2>
 
-#  Examples
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
 
-The greater-than symbol followed by a space (> ) represents the user input. Note that it's not part of the input.
+<p>The final version of the program should run like this:</p>
 
-The final version of the program should run like this:
+<p><strong>Example 1</strong></p>
 
-Example 1
-```
-Please enter the number of the habitat you would like to view: > 3
+<pre><code class="language-no-highlight">Please enter the number of the habitat you would like to view: &gt; 3
 
 Switching on the camera in the goose habitat...
 
@@ -30,12 +37,12 @@ Switching on the camera in the goose habitat...
    (`.         _..--.._   ,'  ,'        \    \
   (`-.\    .-""        ""'   /          (  d _b
  (`._  `-"" ,._             (            `-(   \
- <_  `     (  <`<            \              `-._\
-  <`-       (__< <           :
-   (__        (_<_<          ;
+ &lt;_  `     (  &lt;`&lt;            \              `-._\
+  &lt;`-       (__&lt; &lt;           :
+   (__        (_&lt;_&lt;          ;
     `------------------------------------------
 The goose is staring intently at you... Maybe it's time to change the channel?
-Please enter the number of the habitat you would like to view: > 1
+Please enter the number of the habitat you would like to view: &gt; 1
 
 Switching on the camera in the lion habitat...
                                                ,w.
@@ -53,6 +60,8 @@ WMMm__,-'.'     /      _.\      F'''-+,,   ;_,_.dMMMMMMMM[,_ / `=_}
          /  Y,              `,  `-,=,_{   ;      MMMP`""-,  `-._.-,
         (--, )                `,_ / `) \/"")      ^"      `-, -;"\:
 The lion is roaring!
-Please enter the number of the habitat you would like to view: > exit
+Please enter the number of the habitat you would like to view: &gt; exit
 See you later!
-```
+</code></pre>
+
+<p> </p>
