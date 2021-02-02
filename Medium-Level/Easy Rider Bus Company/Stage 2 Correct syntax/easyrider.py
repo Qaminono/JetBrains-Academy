@@ -11,6 +11,6 @@ for data in easy_bd:
         if not re.match(errors[field][1], data[field]):
             errors[field][0] += 1
 
-print(f'Type and required field validation: {sum(value[0] for value in errors.values())} errors')
+print(f'Format validation: {sum(value[0] for value in errors.values())} errors')
 for field in errors:
     print(f'{field}: {errors[field][0]}')
