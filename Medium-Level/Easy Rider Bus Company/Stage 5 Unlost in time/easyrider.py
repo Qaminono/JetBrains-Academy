@@ -5,7 +5,8 @@ easy_db = json.loads(input())
 buses_info = dict()
 
 for bus_id in set(data["bus_id"] for data in easy_db):
-    buses_info[bus_id] = [(data["stop_name"], data["a_time"]) for data in filter(lambda data: bus_id == data["bus_id"], easy_db)]
+    buses_info[bus_id] = [(data["stop_name"], data["a_time"]) for data in
+                          filter(lambda data: bus_id == data["bus_id"], easy_db)]
 
 errors = list()
 for bus_id in buses_info:
