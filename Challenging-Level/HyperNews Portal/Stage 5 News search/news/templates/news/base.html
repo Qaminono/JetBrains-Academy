@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h2> {{ title }} </h2>
+</head>
+<body>
+<p> {{ created }} </p>
+<p> {{ text }} </p>
+<a href="/news/">Back</a>
+</body>
+</html>

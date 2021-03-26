@@ -46,10 +46,8 @@ class AllNewsView(View):
 
 class NewsView(View):
     def get(self, request, news_id,  *args, **kwargs):
-        for data in news:
-            if data["link"] == news_id:
-                return HttpResponse(f"<h2>{data['title']}</h2>"
-                                    f"<p>{data['created']}</p>"
-                                    f"<p>{data['text']}</p>"
-                                    f'<a href="/news/">')
-        return HttpResponse('')
+        if news_id:
+            for article in news:
+                if news_id == article['link']:
+                    return render(request, "news/base.html", context=article)
+        return redirect(f'/news/')
