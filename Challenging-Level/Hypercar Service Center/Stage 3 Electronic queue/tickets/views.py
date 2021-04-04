@@ -27,11 +27,13 @@ class CustomersQueue:
                    len(self.inflate_tires['clients']) * self.inflate_tires['processing_time'] + \
                    len(self.diagnostic['clients']) * self.diagnostic['processing_time']
             self.diagnostic['clients'].append(ticket_num)
-        json.dump([self.change_oil, self.inflate_tires, self.diagnostic], open(TICKETS_JSON_PATH, 'w'))
+        # json.dump([self.change_oil, self.inflate_tires, self.diagnostic], open(TICKETS_JSON_PATH, 'w')) when need
         return ticket_num, time
 
 
-customers = CustomersQueue(*json.load(open(TICKETS_JSON_PATH)))
+# customers = CustomersQueue(*json.load(open(TICKETS_JSON_PATH))) when need
+customers = CustomersQueue(*json.loads('[{"clients": [], "processing_time": 2}, {"clients": [], "processing_time": 5},'
+                                       ' {"clients": [], "processing_time": 30}]'))
 
 
 class WelcomeView(View):
